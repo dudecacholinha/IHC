@@ -34,9 +34,8 @@ public class Spawn : MonoBehaviour
         }
         else
         {
-            //meter o alvo do crepper aqui?
+            //meter o alvo do crepper aqui
             //Debug.Log(crepper.GetComponent<MovingObjects>().target);
-            //isto nao devia tar aquiiii
             crepper.GetComponent<MovingObjects>().target = target;
             Instantiate(crepper, transform.position,  crepper.transform.rotation);
         }
