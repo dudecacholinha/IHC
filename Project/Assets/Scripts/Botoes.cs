@@ -26,16 +26,7 @@ public class Botoes : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       /* if (aux.gameObject.transform.position.z < -11)
-        {
-            Destroy(aux.gameObject);
-            collision = 0;
-            aux = null;
-        }
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    rb.position = new Vector3(rb.position[0], rb.position[1] - (float)0.5, rb.position[2]);
-        //}*/
+    
     }
     private void OnMouseDown()
     {
@@ -75,30 +66,6 @@ public class Botoes : MonoBehaviour
                     break;
             }
             Destroy(aux.gameObject);
-           // Destroy(aux.gameObject.transform.parent.gameObject);
-            /*if (aux.gameObject.CompareTag("nota"))
-            {
-                audioData = GetComponent<AudioSource>();
-                audioData.Play(0);
-                collision = 0;
-            }
-            if (aux.gameObject.CompareTag("carro"))
-            {
-                clicking = true;
-                audioData = GetComponent<AudioSource>();
-                audioData.Play(0);
-                collision = 0;
-            }
-            else
-            {//inutil funciona a mesma mas wtf is going on
-                if (aux.gameObject.CompareTag("creeper")) {
-                    Debug.Log("creeper");
-                    GameObject player = GameObject.FindWithTag("player");
-                    player.GetComponent<Health>().health--;
-                    collision = 0;
-                }
-            }*/
-            //Destroy(aux.gameObject);
 
         }
         else
@@ -130,7 +97,8 @@ public class Botoes : MonoBehaviour
         
 
     }
-    //ver isto bemmmmm
+
+
     private void OnTriggerExit(Collider other)
     {
             if (clicking==false&& (other.gameObject.CompareTag("carro") || other.gameObject.CompareTag("traseira")))
@@ -152,8 +120,8 @@ public class Botoes : MonoBehaviour
                     player.GetComponent<Health>().health--;
                 }
                 Destroy(other.gameObject);
-                //pra cabra da ovelha
-                //mudar isto
+                
+                //ter cuidado com esta condiçao
                 if (other.gameObject.transform.parent!=null)
                 {
                     Destroy(other.gameObject.transform.parent.gameObject);
